@@ -1,72 +1,13 @@
 <!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <title>Our Class Timetable</title>
-  <script src="https://unpkg.com/vue@3"></script>
-</head>
-<body>
-
-<div id="app">
-  <h1>Our Class Timetable</h1>
-
-  <!-- Dropdown for days -->
-  <label>Select Day:</label>
-  <select v-model="selectedDay">
-    <option disabled value="">Choose a day</option>
-    <option v-for="day in days" :key="day">{{ day }}</option>
-  </select>
-
-  <!-- Show timetable -->
-  <div v-if="selectedDay">
-    <h2>{{ selectedDay }} Schedule</h2>
-
-    <table border="1">
-      <tr>
-        <th>Time</th>
-        <th>Activity</th>
-      </tr>
-
-      <tr v-for="(activity, index) in timetable[selectedDay]" :key="index">
-        <td>{{ activity.time }}</td>
-        <td>{{ activity.task }}</td>
-      </tr>
-    </table>
-  </div>
-
-  <p v-else>Please select a day</p>
-</div>
-
-<script>
-Vue.createApp({
-  data() {
-    return {
-      selectedDay: "",
-      days: ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"],
-
-      timetable: {
-        Monday: [
-          { time: "8:00 - 9:00", task: "Math" },
-          { time: "9:00 - 10:00", task: "English" }
-        ],
-        Tuesday: [
-          { time: "8:00 - 9:00", task: "Physics" },
-          { time: "9:00 - 10:00", task: "Chemistry" }
-        ],
-        Wednesday: [
-          { time: "8:00 - 9:00", task: "Biology" }
-        ],
-        Thursday: [
-          { time: "8:00 - 9:00", task: "History" }
-        ],
-        Friday: [
-          { time: "8:00 - 9:00", task: "Computer Studies" }
-        ]
-      }
-    }
-  }
-}).mount("#app")
-</script>
-
-</body>
+<html lang="">
+  <head>
+    <meta charset="UTF-8">
+    <link rel="icon" href="/favicon.ico">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vite App</title>
+  </head>
+  <body>
+    <div id="app"></div>
+    <script type="module" src="/src/main.js"></script>
+  </body>
 </html>
